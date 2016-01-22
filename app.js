@@ -18,13 +18,13 @@ var app = express();
 //var procesamiento = require('./routes/procesamiento.js')
 
 // Conectamos a base de datos 
-mongoose.connect('mongodb://localhost/tienda', function(err){
+/*mongoose.connect('mongodb://localhost/tienda', function(err){
   if (err) {
     console.log("Error de conexion",err);
   }else{
     console.log("Conexion exitosa");
   }
-});
+});*/
 
 // Configuration
 
