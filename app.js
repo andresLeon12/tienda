@@ -28,7 +28,7 @@ var app = express();
 
 // Configuration
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
     app.use(express.static(path.join(__dirname, 'public')));
@@ -61,7 +61,7 @@ app.get('/contacto', routes.contacto)
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });*/
 var server = http.createServer(app);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 server.listen(port, function () {
   console.log('Servidor inicializado en %d', port);
 });
