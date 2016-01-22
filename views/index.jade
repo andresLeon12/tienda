@@ -1,0 +1,84 @@
+extends layout/layout
+block content
+	#home
+		#home-slider.carousel.slide.carousel-fade(data-ride='carousel')
+			ol.carousel-indicators
+				li(data-target='#home-slider', data-slide-to='0')
+				li.active(data-target='#home-slider', data-slide-to='1')
+				li(data-target='#home-slider', data-slide-to='2')
+			.carousel-inner
+				.item(style='background: url(images/salchicha.jpg);')
+					.container
+						.row
+							.col-md-12
+								.carousel-content
+									h2.animated.fadeInUpBig.text-center.text-black Salchicha Ejuteca
+									p.animated.rollIn.text-black.text-center
+										span.text900 El mejor lugar
+										|  de ventas eń línea,
+										br
+										|  de la salchicha ejuteca 
+										i.fa.fa-heart-o
+										|  es 
+										span.text900 aquí.
+										br
+										br
+										a.btn.btn-primary.btn-lg(href='#') Comprar
+				.item(style='background: url(images/salchicha2.jpg);')
+					.container
+						.row
+							.col-md-12
+								.carousel-content
+									h3.animated.fadeInLeftBig.text-left Ricos productos
+									p.animated.fadeInDownBig.text-left
+										span.text900 Los mejores productos tradicionales
+										|  como las tosatadas ....
+										br
+										|  entre muchos productos más
+										|  en los cuales
+										span.text900 podrás usar la salchicha ejuteca.
+										br
+										br
+										a.btn.btn-primary.btn-lg(href='#') Leer más
+			.row
+			a.left.carousel-control(href='', data-slide='prev')
+				i.fa.fa-angle-left
+			a.right.carousel-control(href='', data-slide='next')
+				i.fa.fa-angle-right
+			.pattern
+	#tagline
+		.container
+			.row
+				.col-md-12
+					h2 SERGIT venta de la Salchicha Ejuteca
+					p
+						| Atrévete a disfrutar de el delicioso sabor de la salchicha ejutéca, con nosotros podrás encontrar
+						los mejores precios y sobre todo, la mejor calidad en sabor de la salchicha ejuteca.
+	#featured
+		.container
+			.row
+				.col-md-12
+					h2 Presentaciones
+					p Presentaciones de la salchicha...
+			.row
+				.col-md-4.col-sm-4
+					.featured-container
+						.featured-photos
+							i.fa.fa-check-square
+						h3 Kilo
+						p
+							| Te ofrecemos la salchicha en presentación por kilogramo.
+				.col-md-4.col-sm-4
+					.featured-container
+						.featured-photos
+							i.fa.fa-check-square
+						h3 1/2 Kilo
+						p
+							| Te ofrecemos la salchicha en presentación por medio kilogramo.
+				.col-md-4.col-sm-4
+					.featured-container
+						.featured-photos
+							i.fa.fa-check-square
+						h3 1/4 Kilo
+						p
+							| Te ofrecemos la salchicha en presentación por un cuarto de kilogramo.

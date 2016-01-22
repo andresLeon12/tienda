@@ -1,0 +1,71 @@
+extends layout/layout
+block content
+	.heads(style='background: url(img/img02.jpg) #ef9a9a center center;')
+		.container
+			.row
+				.col-md-12
+					h2 Selecciona la cantidad a comprar
+					p
+						| En SERGIT te ofrecemos salchicha desde 1/4 Kg hasta los Kg que deses comprar.
+	#featured(ng-controller='tienda_ordenar')
+		.container
+			.row
+				.col-md-12
+					ol.breadcrumb
+						li.active Cantidad a comprar
+				if(error)
+					.col-md-12
+						.alert.alert-danger.alert-dismissible.fade.in(role='alert')
+							button.close(type='button', data-dismiss='alert', aria-label='Cerrar')
+								span(aria-hidden='true') ×
+							h4 ¡Ha ocurrido un error!
+							p
+								| #{error}
+				.col-md-4
+					.jumbotron(style='padding-top:15px;')
+						h3#cabecera 1/4 Kg
+						.row
+							.col-md-12
+								img(src='/images/salchicha.jpg' class='img-responsive img-rounded')
+							.col-md-12
+								#price
+									h1.label.label-warning	$65
+						br
+						br
+						.row
+							.col-md-12
+								a.btn.btn-danger#siguiente_btn(href='/ordenar/cuarto') 
+									i.fa.fa-check
+									|  Siguiente  
+				.col-md-4
+					.jumbotron(style='padding-top:15px;')
+						h3#cabecera 1/2 Kg
+						.row
+							.col-md-12
+								img(src='/images/salchicha.jpg' class='img-responsive img-rounded')
+							.col-md-12
+								#price
+									h1.label.label-warning	$130
+						br
+						br
+						.row
+							.col-md-12
+								a.btn.btn-danger#siguiente_btn(href='/ordenar/medio') 
+									i.fa.fa-check
+									|  Siguiente  
+				.col-md-4
+					.jumbotron(style='padding-top:15px;')
+						h3#cabecera 1 Kg
+						.row
+							.col-md-12
+								img(src='/images/salchicha.jpg' class='img-responsive img-rounded')
+							.col-md-12
+								#price
+									h1.label.label-warning	$260
+						br
+						br
+						.row
+							.col-md-12
+								a.btn.btn-danger#siguiente_btn(href='/ordenar/entero') 
+									i.fa.fa-check
+									|  Siguiente  

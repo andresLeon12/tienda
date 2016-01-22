@@ -1,0 +1,24 @@
+extends layout/layout
+block content
+	.heads(style='background: url(img/img02.jpg) #ef9a9a center center;')
+		.container
+			.row
+				.col-md-12
+					h2 Contáctanos
+					p
+						| En SERGIT queremos escucharte.
+	#featured(ng-controller='tienda_ordenar')
+		.container
+			.row
+				.col-md-12
+					.jumbotron
+						h1 ¡Nosotros!
+						p 
+							| Somos una empresa dedicada a la venta de la salchicha ejuteca.
+						p
+							| e-mail: landres697@gmail.com
+						p
+							| teléfono: 9513085665
+						a.btn.btn-primary.btn-lg(href='/', role='button') 
+							| Regresar al inicio
+				

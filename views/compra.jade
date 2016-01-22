@@ -1,0 +1,53 @@
+extends layout/layout
+block content
+	script(src="/js/utils.js")
+	.heads(style='background: url(img/img02.jpg) #ef9a9a center center;')
+		.container
+			.row
+				.col-md-12
+					h2 Selecciona la cantidad a comprar
+					p
+						| En SERGIT te ofrecemos salchicha desde 1/4 Kg hasta los Kg que deses comprar.
+	#featured(ng-controller='tienda_ordenar')
+		.container
+			//a.btn-floating(href='', ng-click='add_to_carrito()', data-toggle="tooltip", data-placement="left", title="Añadir al carrito")
+				//i.fa.fa-shopping-cart
+			.row
+				.col-md-12
+					ol.breadcrumb
+						li Cantidad a comprar
+						li.active Información de compra
+			.row
+				.col-md-4
+					.alert.alert-warning.alert-dismissible.fade.in#error_actualizar(role='alert')
+						button.close(type='button', data-dismiss='alert', aria-label='Cerrar')
+							span(aria-hidden='true') ×
+					.alert.alert-danger.alert-dismissible.fade.in(role='alert')
+						p#cantidad_encargada
+							| Cantidad a comprar 
+							if(compra.cantidad=='cuarto')
+								| 1/4 Kg
+							if(compra.cantidad=='medio')
+								| 1/2 Kg
+							if(compra.cantidad=='entero')
+								| #{compra.cantidad_numero} Kg
+							br
+							| Total $#{compra.total}
+					if(compra.cantidad=='entero')
+						.alert.alert-info.alert-dismissible.fade.in(role='alert')
+							p
+								| Puede cambiar la cantidad a comprar al momento de realizar la compra.
+				.col-md-8
+					h2 Datos del comprador
+					form.form-horizontal(action='/datos_comprador', method='POST')
+						.form-group
+							label.col-sm-2.control-label(for='nombre') Nombre
+							.col-sm-10
+								input#nombre.form-control(type='text', placeholder='Nombre completo', name='nombre')
+						.form-group
+							label.col-sm-2.control-label(for='inputEmail3') Correo
+							.col-sm-10
+								input#inputEmail3.form-control(type='email', placeholder='Correo electrónico', name='correo')
+						.form-group
+							input.btn.btn-primary(type='submit' value='Continuar')
+

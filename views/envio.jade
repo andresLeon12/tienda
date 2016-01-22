@@ -1,0 +1,68 @@
+extends layout/layout
+block content
+	script(src="/js/utils.js")
+	.heads(style='background: url(img/img02.jpg) #ef9a9a center center;')
+		.container
+			.row
+				.col-md-12
+					h2 Selecciona la forma de pago
+					p
+						| En SERGIT te ofrecemos salchicha desde 1/4 Kg hasta los Kg que deses comprar.
+	#featured(ng-controller='tienda_ordenar')
+		.container
+			//a.btn-floating(href='', ng-click='add_to_carrito()', data-toggle="tooltip", data-placement="left", title="Añadir al carrito")
+			//	i.fa.fa-shopping-cart
+			.row
+				.col-md-12
+					ol.breadcrumb
+						li Cantidad a comprar
+						li Información de compra
+						li.active Forma de envio
+			.row
+				.col-md-4
+					.alert.alert-warning.alert-dismissible.fade.in#error_actualizar(role='alert')
+						button.close(type='button', data-dismiss='alert', aria-label='Cerrar')
+							span(aria-hidden='true') ×
+					.alert.alert-danger.alert-dismissible.fade.in(role='alert')
+						p#cantidad_encargada
+							| Cantidad a comprar 
+							if(compra.cantidad=='cuarto')
+								| 1/4 Kg
+							if(compra.cantidad=='medio')
+								| 1/2 Kg
+							if(compra.cantidad=='entero')
+								| #{compra.cantidad_numero} Kg
+							br
+							| Total $#{compra.total}
+					if(compra.cantidad=='entero')
+						.alert.alert-info.alert-dismissible.fade.in(role='alert')
+							p
+								| Puede cambiar la cantidad a comprar al momento de realizar la compra.
+				.col-md-8
+					h2 #{compra.comprador.nombre} selecciona la forma de pago
+					.row
+					.row
+						.col-md-6
+							a.btn.btn-success(href='/terminar_compra') Acordar con el vendedor
+						.col-md-6
+							form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
+								input(type='hidden', name='cmd', value='_s-xclick')
+								input(type='hidden', name='hosted_button_id', value='WHHAAV7E5JNJJ')
+								input(type='image', src='https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif', border='0', name='submit', alt='PayPal, la forma más segura y rápida de pagar en línea.')
+								img(alt='', border='0', src='https://www.paypalobjects.com/es_XC/i/scr/pixel.gif', width='1', height='1')
+
+
+	.modal#guardar_carrito(tab-index='-1', role='dialog', aria-labelledby='myModelLabel')
+		.modal-dialog(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span &times;
+					h4 ¿Deseas añadir tu orden al carrito de compras?
+				.modal-body
+					| ...
+				.modal-footer
+					button.btn.btn-default(type='button', data-dismiss='modal') 
+						| No guardar
+					button.btn.btn-default(type='button', data-dismiss='modal') 
+						| Guardar

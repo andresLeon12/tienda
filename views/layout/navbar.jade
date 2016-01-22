@@ -1,0 +1,68 @@
+nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+  .container
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.visible-xs(href='/') SERGIT
+    // Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav.nav-left
+        if(inicio)
+          li.active
+            a(href='/') 
+              i.fa.fa-home
+              |  Inicio
+        else
+          li
+            a(href='/') 
+              i.fa.fa-home
+              |  Inicio
+        //if(carrito)
+        //  li.active
+        //    a(href='#') 
+        //      i.fa.fa-shopping-cart
+        //      |  Carrito de compras
+        //else
+        //  li
+        //    a(href='#') 
+        //     i.fa.fa-shopping-cart
+        //      |  Carrito de compras
+        if(ordenar)
+          li.active
+            a(href='ordenar') 
+              i.fa.fa-shopping-basket
+              |  Ordenar
+        else
+          li
+            a(href='ordenar') 
+              i.fa.fa-shopping-basket
+              |  Ordenar
+        if(contacto)
+          li.active
+            a(href='contacto') 
+              i.fa.fa-phone
+              |  Contacto
+        else
+          li
+            a(href='contacto') 
+              i.fa.fa-phone
+              |  Contacto
+      a.logo.visible-lg.visible-md(href='/')
+        img(src='/images/logo.png', alt='Venta de salchicha ejuteca en línea')
+      #brand.visible-lg.visible-md  
+      ul.nav.navbar-nav.nav-right
+        //if(catalogo)
+        //  li.active
+        //    a(href='#') 
+        //      i.fa.fa-th
+        //      |  Catálogo de productos
+        //else
+        //  li
+        //    a(href='#') 
+        //      i.fa.fa-th
+        //      |  Catálogo de productos
+            

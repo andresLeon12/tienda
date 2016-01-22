@@ -1,0 +1,30 @@
+extends layout/layout
+block content
+	script(src="/js/utils.js")
+	.heads(style='background: url(img/img02.jpg) #ef9a9a center center;')
+		.container
+			.row
+				.col-md-12
+					h2 Compra finalizada
+					p
+						| En SERGIT te ofrecemos salchicha desde 1/4 Kg hasta los Kg que deses comprar.
+	#featured(ng-controller='tienda_ordenar')
+		.container
+			.row
+				.col-md-12
+					ol.breadcrumb
+						li Cantidad a comprar
+						li Información de compra
+						li Forma de envio
+						li.active Compra terminada
+			.row
+				.col-md-12
+					.jumbotron
+						h1 ¡Gracias por tu compra!
+						p 
+							| #{compra.comprador.nombre} comunicate con el vendor para recibir tu compra
+						p
+							| e-mail: landres697@gmail.com
+						a.btn.btn-primary.btn-lg(href='/', role='button') 
+							| Regresar al inicio
+
