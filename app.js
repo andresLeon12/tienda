@@ -63,5 +63,5 @@ app.get('/contacto', routes.contacto)
 //var server = http.createServer(app);
 //var port = process.env.PORT || 5000;
 app.listen(app.get('port'), function () {
-  console.log('Servidor inicializado en %d', port);
+  console.log('Servidor inicializado en %d', app.get('port'));
 });
