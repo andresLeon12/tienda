@@ -28,7 +28,7 @@ var app = express();
 
 // Configuration
 
-//app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000));
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
     app.use(express.static(path.join(__dirname, 'public')));
@@ -62,9 +62,6 @@ app.get('/contacto', routes.contacto)
 });*/
 //var server = http.createServer(app);
 //var port = process.env.PORT || 5000;
-/*app.listen(app.get('port'), function () {
+app.listen(app.get('port'), function () {
   console.log('Servidor inicializado en %d', app.get('port'));
-});*/
-app.listen(5000, function () {
-  console.log('Servidor inicializado en 5000');
 });
